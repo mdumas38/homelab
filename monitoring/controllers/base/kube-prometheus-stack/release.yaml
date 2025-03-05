@@ -31,3 +31,14 @@ spec:
   values:
     grafana:
       adminPassword: mason
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+
+        hosts:
+          - grs.mrmason.com
+
+        # - secretName: grafana-general-tls
+        #   hosts:
+        #   - grafana.example.com
+
