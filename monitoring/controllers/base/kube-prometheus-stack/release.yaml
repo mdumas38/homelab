@@ -38,7 +38,8 @@ spec:
         hosts:
           - grs.mrmason.org
 
-        # - secretName: grafana-general-tls
-        #   hosts:
-        #   - grafana.example.com
+        tls:
+          - secretName: grafana-general-tls
+            hosts:
+              - grs.mrmason.org
 
