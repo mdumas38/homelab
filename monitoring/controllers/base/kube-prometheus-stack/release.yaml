@@ -36,7 +36,7 @@ spec:
         ingressClassName: traefik
 
         hosts:
-          - grs.mrmason.com
+          - grs.mrmason.org
 
         # - secretName: grafana-general-tls
         #   hosts:
