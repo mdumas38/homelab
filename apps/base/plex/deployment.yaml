@@ -1,24 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: plex
+  name: plex-server
+  namespace: plex
+  labels:
+    app: plex-server
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: plex
-    strategy:
-      type: Recreate
+      app: plex-server
   template:
     metadata:
       labels:
-        app: plex
+        app: plex-server
     spec:
-    #  securityContext:
-    #    fsGroup: 1000
-    #    runAsUser: 1000
-    #    runAsGroup: 1000
+      hostNetwork: false
 
       containers:
         - name: plex
@@ -39,22 +36,16 @@ spec:
             allowPrivilegeEscalation: true
 
           volumeMounts:
-            - mountPath: /audiobooks
-              name: audiobookshelf-data
-              subPath: audiobooks
-            - mountPath: /podcasts
-              name: audiobookshelf-data
-              subPath: podcasts
             - mountPath: /config
               name: config
-            - mountPath: /metadata
-              name: audiobookshelf-data
-              subPath: metadata
+            - mountPath: /movies1
+              name: movies1
+            - mountPath: /tv1
+              name: tv1
       volumes:
-        - name: config
+        - name: plex-media
           persistentVolumeClaim:
-            claimName: plex-pvc
-            readOnly: false
+            claimName: plex-media-pvc
         - name: plex-nfs
           hostPath:
             path: /nfs

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: plex-config
+  namespace: plex
+data:
+  TZ: "America/New_York"
+  PUID: "1000"
+  PGID: "4000"
+  VERSION: "docker"
+  UMASK_SET: "022"
+  PLEX_CLAIM: ""  # optionally add your Plex claim token here if initial setup needed
