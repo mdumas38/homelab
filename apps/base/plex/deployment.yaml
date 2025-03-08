@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plex
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: plex
+    strategy:
+      type: Recreate
+  template:
+    metadata:
+      labels:
+        app: plex
+    spec:
+    #  securityContext:
+    #    fsGroup: 1000
+    #    runAsUser: 1000
+    #    runAsGroup: 1000
+
+      containers:
+        - name: plex
+          image: plexinc/pms-docker:latest
+
+          ports:
+            - containerPort: 3838
+              name: plex
+              protocol: TCP
+
+          envFrom:
+            - configMapRef:
+                name: plex-configmap
+            # - secretRef:
+            #     name: audiobookshelf-container-env
+
+          securityContext:
+            allowPrivilegeEscalation: true
+
+          volumeMounts:
+            - mountPath: /audiobooks
+              name: audiobookshelf-data
+              subPath: audiobooks
+            - mountPath: /podcasts
+              name: audiobookshelf-data
+              subPath: podcasts
+            - mountPath: /config
+              name: config
+            - mountPath: /metadata
+              name: audiobookshelf-data
+              subPath: metadata
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: plex-pvc
+            readOnly: false
+        - name: plex-nfs
+          hostPath:
+            path: /nfs
+
+      restartPolicy: Always
