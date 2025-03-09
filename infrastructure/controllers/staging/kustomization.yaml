@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: renovate
 resources:
   - renovate
+  - synology-csi
