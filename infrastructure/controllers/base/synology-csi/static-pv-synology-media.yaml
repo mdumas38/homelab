@@ -1,0 +1,16 @@
+# static-pv-synology-media.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: plex-media-pv
+spec:
+  capacity:
+    storage: 3Ti
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.0.238
+    path: /volume1/Movies   # <-- Set this to your media root (containing movies, tvshows folders)
+  mountOptions:
+    - nfsvers=4.1
