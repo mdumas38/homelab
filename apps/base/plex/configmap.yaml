@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: plex-config
+  name: plex-configmap
   namespace: plex
 data:
   TZ: "America/New_York"

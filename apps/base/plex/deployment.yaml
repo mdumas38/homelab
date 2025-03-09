@@ -22,7 +22,7 @@ spec:
           image: plexinc/pms-docker:latest
 
           ports:
-            - containerPort: 3838
+            - containerPort: 32400
               name: plex
               protocol: TCP
 
@@ -36,18 +36,20 @@ spec:
             allowPrivilegeEscalation: true
 
           volumeMounts:
+            - mountPath: /volume1/Movies
+              name: plex-media
+            - mountPath: /volume1/TV_Shows
+              name: plex-media
             - mountPath: /config
-              name: config
-            - mountPath: /movies1
-              name: movies1
-            - mountPath: /tv1
-              name: tv1
+              name: plex-config-volume
+          livenessProbe:
+            tcpSocket:
+              port: 32400
+            initialDelaySeconds: 60
+            periodSeconds: 5
       volumes:
         - name: plex-media
           persistentVolumeClaim:
             claimName: plex-media-pvc
-        - name: plex-nfs
-          hostPath:
-            path: /nfs
-
-      restartPolicy: Always
+        - name: plex-config-volume
+          emptyDir: {}
