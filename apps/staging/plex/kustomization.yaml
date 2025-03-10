@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: plex
 resources:
   - ../../base/plex/
-  # - cloudflare.yaml
-  # - cloudflare-secret.yaml
-  # - linkding-container-env-secret.yaml
-  # - ingress.yaml
+  - cloudflare.yaml
+  - cloudflare-secret.yaml
+  - ingress.yaml
