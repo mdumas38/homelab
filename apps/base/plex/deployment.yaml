@@ -52,4 +52,5 @@ spec:
           persistentVolumeClaim:
             claimName: plex-media-pvc
         - name: plex-config-volume
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: plex-config-pvc

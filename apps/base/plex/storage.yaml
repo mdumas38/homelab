@@ -10,3 +10,16 @@ spec:
   resources:
     requests:
       storage: 2Ti
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: plex-config-pvc
+  namespace: plex
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 20Gi
