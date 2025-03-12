@@ -7,5 +7,5 @@ spec:
   ports:
     - port: 32400
   selector:
-    app: plex
+    app: plex-server
   type: ClusterIP
