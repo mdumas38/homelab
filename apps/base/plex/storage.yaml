@@ -18,7 +18,7 @@ metadata:
   namespace: plex
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: synology-nfs
   resources:
     requests:
