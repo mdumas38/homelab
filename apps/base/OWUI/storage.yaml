@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: OWUI-data-pvc
-  namespace: OWUI
+  name: open-webui-data-pvc
+  namespace: open-webui
 spec:
   accessModes:
     - ReadWriteMany

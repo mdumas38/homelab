@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: OWUI
-  namespace: OWUI
+  name: open-webui
+  namespace: open-webui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: OWUI
+      app: open-webui
   template:
     metadata:
       labels:
-        app: OWUI
+        app: open-webui
     spec:
     #  securityContext:
     #    fsGroup: 33
@@ -19,7 +19,7 @@ spec:
     #    runAsGroup: 33
 
       containers:
-        - name: OWUI
+        - name: open-webui
           image: ghcr.io/open-webui/open-webui:main
           ports:
             - containerPort: 5173
@@ -35,8 +35,8 @@ spec:
 
           volumeMounts:
             - mountPath: /volume1/OWUI
-              name: OWUI-data
+              name: open-webui-data
       volumes:
-        - name: OWUI-data
+        - name: open-webui-data
           persistentVolumeClaim:
-            claimName: OWUI-data-pvc
+            claimName: open-webui-data-pvc
