@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: OWUI
+  namespace: OWUI
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: OWUI
+  template:
+    metadata:
+      labels:
+        app: OWUI
+    spec:
+    #  securityContext:
+    #    fsGroup: 33
+    #    runAsUser: 33
+    #    runAsGroup: 33
+
+      containers:
+        - name: OWUI
+          image: ghcr.io/open-webui/open-webui:main
+          ports:
+            - containerPort: 5173
+
+          envFrom:
+            # - configMapRef:
+            #     name: linkding-configmap
+            # - secretRef:
+            #     name: linkding-container-env
+
+          securityContext:
+            allowPrivilegeEscalation: true
+
+          volumeMounts:
+            - mountPath: /volume1/OWUI
+              name: OWUI-data
+      volumes:
+        - name: OWUI-data
+          persistentVolumeClaim:
+            claimName: OWUI-data-pvc
