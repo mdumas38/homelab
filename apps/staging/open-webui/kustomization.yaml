@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: plex
 resources:
   - ../../base/open-webui/
-  # - cloudflare.yaml
-  # - cloudflare-secret.yaml
-  - ingress.yaml
+  - cloudflare.yaml
+  - cloudflare-secret.yaml
+  # - ingress.yaml

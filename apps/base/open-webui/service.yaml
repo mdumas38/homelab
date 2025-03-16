@@ -5,7 +5,8 @@ metadata:
   namespace: open-webui
 spec:
   ports:
-    - port: 5173
+    - port: 8080
+      targetPort: 8080
   selector:
     app: open-webui
   type: ClusterIP
