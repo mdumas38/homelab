@@ -34,7 +34,7 @@ spec:
             allowPrivilegeEscalation: true
 
           volumeMounts:
-            - mountPath: /volume1/OWUI
+            - mountPath: /app/backend/data
               name: open-webui-data
       volumes:
         - name: open-webui-data
