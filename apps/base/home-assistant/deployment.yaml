@@ -27,7 +27,7 @@ spec:
             #     name: linkding-container-env
 
           securityContext:
-            allowPrivilegeEscalation: true
+            privileged: true
             runAsUser: 0
 
           volumeMounts:
