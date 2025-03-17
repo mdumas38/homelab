@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: home-assistant
 resources:
   - ../../base/home-assistant/
-  # - cloudflare.yaml
-  # - cloudflare-secret.yaml
+  - cloudflare.yaml
+  - cloudflare-secret.yaml
   # - ingress.yaml
