@@ -5,8 +5,8 @@ metadata:
   namespace: home-assistant
 spec:
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 8123
+      targetPort: 8123
   selector:
     app: home-assistant
   type: ClusterIP
