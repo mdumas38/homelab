@@ -23,6 +23,18 @@ spec:
     crds: CreateReplace
   driftDetection:
     mode: enabled
+  values:
+    config:
+      # Enable in-cluster configuration
+      useInClusterConfig: true
+    serviceAccount:
+      # Create a service account for Headlamp
+      create: true
+      # Add necessary RBAC rules
+      clusterRoleRules:
+        - apiGroups: ["*"]
+          resources: ["*"]
+          verbs: ["*"]
   # values:
   #   grafana:
   #     adminPassword: mason
