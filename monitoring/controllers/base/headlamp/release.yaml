@@ -23,29 +23,6 @@ spec:
     crds: CreateReplace
   driftDetection:
     mode: enabled
-#  values:
-#    config:
-#      # Enable in-cluster configuration
-#      useInClusterConfig: true
-#    serviceAccount:
-#      # Create a service account for Headlamp
-#      create: true
-#      # Add necessary RBAC rules
-#      clusterRoleRules:
-#        - apiGroups: ["*"]
-#          resources: ["*"]
-#          verbs: ["*"]
-  # values:
-  #   grafana:
-  #     adminPassword: mason
-  #     ingress:
-  #       enabled: true
-  #       ingressClassName: traefik
-
-  #       hosts:
-  #         - grs.mrmason.org
-
-  #      tls:
-  #         - secretName: grafana-general-tls
-  #           hosts:
-  #             - grs.mrmason.org
+  values:
+    image:
+      tag: "v0.29.0"
