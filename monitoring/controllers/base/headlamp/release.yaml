@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: headlamp
-      version: "0.29.0"
+      version: "0.28.1"
 
       # version: "58.x"
 
@@ -24,5 +24,14 @@ spec:
   driftDetection:
     mode: enabled
   values:
-    image:
-      tag: "v0.29.0"
+    config:
+      # Enable in-cluster configuration
+      useInClusterConfig: true
+    serviceAccount:
+      # Create a service account for Headlamp
+      create: true
+      # Add necessary RBAC rules
+      clusterRoleRules:
+        - apiGroups: ["*"]
+          resources: ["*"]
+          verbs: ["*"]
