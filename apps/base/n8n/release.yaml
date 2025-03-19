@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: n8n
         namespace: n8n
-  valuesFrom:
-    - kind: ConfigMap
-      name: n8n-values
-      valuesKey: values.yaml
+#   valuesFrom:
+#     - kind: ConfigMap
+#       name: n8n-values
+#       valuesKey: values.yaml
