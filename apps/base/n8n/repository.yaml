@@ -5,4 +5,5 @@ metadata:
   namespace: n8n
 spec:
   interval: 1h
-  url: https://8gears.container-registry.com/chartrepo/library/
+  url: oci://8gears.container-registry.com/library/n8n
+  type: oci
