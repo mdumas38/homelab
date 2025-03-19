@@ -1,0 +1,56 @@
+# Application configuration
+image:
+  repository: n8nio/n8n
+  tag: 1.81.4  # Matching the current appVersion
+
+main:
+  config:
+    db:
+      type: postgresdb
+      postgresdb:
+        host: n8n-postgresql  # This will be the service name of your PostgreSQL
+        port: 5432
+        database: n8n
+        user: n8n
+        pool:
+          size: 10
+  secret:
+    n8n:
+      encryption_key: "${N8N_ENCRYPTION_KEY}"  # Will be replaced by a secret
+
+# Database configuration
+postgresql:
+  enabled: true
+  auth:
+    username: n8n
+    database: n8n
+    existingSecret: n8n-postgresql-secret  # Create this secret separately
+
+# Service configuration
+service:
+  type: ClusterIP
+  port: 80
+
+# Ingress configuration
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-buffering: "off"
+    cert-manager.io/cluster-issuer: letsencrypt-prod  # If you're using cert-manager
+  hosts:
+    - host: n8n.your-domain.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: n8n-tls-cert
+      hosts:
+        - n8n.your-domain.com
+
+# Persistence configuration
+persistence:
+  enabled: true
+  size: 10Gi
+  storageClass: "standard"  # Adjust based on your cluster's available storage classes

@@ -6,3 +6,4 @@ resources:
   - plex
   - open-webui
   - home-assistant
+  - n8n

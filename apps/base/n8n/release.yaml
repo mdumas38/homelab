@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: n8n
+  namespace: n8n    # Make sure this matches the repository namespace
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: n8n
+      version: "1.0.3"  # Current chart version
+      sourceRef:
+        kind: HelmRepository
+        name: n8n
+        namespace: n8n
+  valuesFrom:
+    - kind: ConfigMap
+      name: n8n-values
+      valuesKey: values.yaml
