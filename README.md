@@ -41,6 +41,7 @@ Long-term strategy: Multi-GPU cluster (2-4x RTX 3090), possibly RTX 4090 or next
 Applications & systems within my Kubernetes ecosystem include but aren't limited to:
 
 Kubernetes (via Talos Linux): Lightweight OS purpose-built for containers, Kubernetes clusters provisioned and managed cleanly and securely.
+
 Flux & GitOps Practices: Continuous deployment & cluster state management directly from Git repositories.
 
 Cilium CNI: eBPF-based observability, networking, and Kubernetes-aware security.
