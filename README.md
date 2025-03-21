@@ -6,8 +6,10 @@ I envision—and actively build—a computing infrastructure that serves people,
 
 # 🎯 Why I'm Doing This
 Learning and Exploration: Kubernetes and DevOps form the backbone of modern, scalable architectures. My homelab helps me continuously learn advanced infrastructure management while experimenting in a safe, controlled environment.
+
 Personal Digital Sovereignty: I'm passionate about fully owning and securing my personal data. This setup is built precisely to replace reliance on third-party services with a self-managed infrastructure—giving me direct control over privacy, security, and access.
-Human-Centric AI Automation: AI shouldn't enhance corporate profits through surveillance; it should enhance your life through intelligent personal assistance. My goal is integrating AI deeply at a foundational level—to intelligently automate workflows, enrich personal decision-making, streamline routine tasks, and unlock insights personalized to my individual needs.
+
+Human-Centric AI Automation: **AI shouldn't enhance corporate profits through surveillance; it should enhance your life through intelligent personal assistance.** My goal is integrating AI deeply at a foundational level—to intelligently automate workflows, enrich personal decision-making, streamline routine tasks, and unlock insights personalized to my individual needs.
 # ⚙️ Technology & Homelab Architecture
 Here's a snapshot of my current and evolving tech stack:
 
