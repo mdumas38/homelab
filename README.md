@@ -42,18 +42,26 @@ Applications & systems within my Kubernetes ecosystem include but aren't limited
 
 Kubernetes (via Talos Linux): Lightweight OS purpose-built for containers, Kubernetes clusters provisioned and managed cleanly and securely.
 Flux & GitOps Practices: Continuous deployment & cluster state management directly from Git repositories.
+
 Cilium CNI: eBPF-based observability, networking, and Kubernetes-aware security.
+
 Cert-manager: Automated X.509 certificate management and renewal.
+
 CloudNativePG: Managing resilient & scalable Postgres DB clusters within Kubernetes.
+
 External-DNS & External Secrets: Seamlessly automated DNS interaction, and secure integration with external key vaults & secret management (e.g., Azure Key Vault integration planned).
+
 Synology CSI Driver: Kubernetes-native Persistent Volume storage directly on NAS.
+
 Additionally, numerous self-hosted personal applications sit atop the Kubernetes foundation: personal websites and blogs, media libraries (Plex), personal monitoring dashboards, data pipelines, bespoke IoT integrations, quantified-self metrics storage, and many more.
 
 # 🚀 Future-Forward AI Integration
 Uniquely, my homelab is architected for seamless integration of cutting-edge AI in all facets of daily life:
 
 Deep personal context awareness, using privately-hosted datasets—personal contacts, health, nutrition, IoT sensor data, lifestyle preferences—combined in a structured, well-orchestrated system readily available for querying and intelligent automation.
+
 Powerful GPU-backed workloads for local AI processing: fine-tuning, personal model-training, data-driven recommendations, natural language interfaces, and proactive automation of routine tasks.
+
 Secure, local-first data ownership reinforcing complete privacy, peace-of-mind, and transparent interaction between users and highly-personalized AI assistants.
 # 🔒 The Philosophy: Decentralize & Personalize
 This homelab exists at the intersection of deeply personal technology and advanced infrastructure orchestration. It serves as a demonstration of practical yet powerful digital sovereignty, proof that robust personalized computing doesn't have to come at the price of privacy, security, or autonomy.
