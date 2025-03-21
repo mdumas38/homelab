@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calibre
+  namespace: calibre
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calibre
+  template:
+    metadata:
+      labels:
+        app: calibre
+    spec:
+    #  securityContext:
+    #    fsGroup: 33
+    #    runAsUser: 33
+    #    runAsGroup: 33
+
+      containers:
+        - name: calibre
+          image: linuxserver/calibre:8.0.1
+          ports:
+            - containerPort: 8080
+
+          envFrom:
+            # - configMapRef:
+            #     name: linkding-configmap
+            # - secretRef:
+            #     name: linkding-container-env
+
+          securityContext:
+            allowPrivilegeEscalation: true
+
+          volumeMounts:
+            - mountPath: /app/backend/data
+              name: calibre-data
+      volumes:
+        - name: calibre-data
+          persistentVolumeClaim:
+            claimName: calibre-data-pvc
