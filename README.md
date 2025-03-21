@@ -25,8 +25,7 @@ Additional enterprise-grade mini-workstations for scalable nodes
 ### Storage & NAS:
 Current: Synology DS923+, running 2x 8TB Seagate HDDs
 
-Scalable: Planned expansion to 4x 8TB Seagate HDDs ($300); long-term potential of up to 4x 24TB ($2,000)
-
+Scalable: Planned expansion to 4x 8TB Seagate HDDs
 ### Virtualization Server (Proxmox):
 Planned: Enterprise refurb deployment, at least 32GB RAM, i7 or better processor, and 1+TB storage—flexibly ensuring powerful VM capability.
 ### Thin-Clients & Workstations:
