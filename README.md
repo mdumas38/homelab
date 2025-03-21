@@ -16,9 +16,11 @@ Here's a snapshot of my current and evolving tech stack:
 ### Kubernetes Cluster:
 #### Current setup:
 Raspberry Pi 4 (Control plane)
+
 Lenovo ThinkPad T14s node
 #### Near-future (next 2-3 months):
 Mac Mini (transitioning imminently)
+
 Additional enterprise-grade mini-workstations for scalable nodes
 ### Storage & NAS:
 Current: Synology DS923+, running 2x 8TB Seagate HDDs
