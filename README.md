@@ -22,11 +22,14 @@ Mac Mini (transitioning imminently)
 Additional enterprise-grade mini-workstations for scalable nodes
 ### Storage & NAS:
 Current: Synology DS923+, running 2x 8TB Seagate HDDs
+
 Scalable: Planned expansion to 4x 8TB Seagate HDDs ($300); long-term potential of up to 4x 24TB ($2,000)
-Virtualization Server (Proxmox):
+
+### Virtualization Server (Proxmox):
 Planned: Enterprise refurb deployment, at least 32GB RAM, i7 or better processor, and 1+TB storage—flexibly ensuring powerful VM capability.
 ### Thin-Clients & Workstations:
 MacBook Air 15" (macOS for streamlined daily productivity)
+
 Surface Pro running Arch Linux + Hyprland (Linux productivity & lightweight tasks)
 ### GPU Expansion Roadmap:
 Starter GPU: RTX 3060 Ti to test proof-of-concept AI workloads
