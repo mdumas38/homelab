@@ -6,7 +6,7 @@ resources:
   - csi-driver.yml
   - namespace.yml
   - node.yml
-  - snapshotter
+  # - snapshotter
   - static-pv-synology-media.yaml
   - storage-class.yml
   - synology-nfs-storageclass.yaml
