@@ -30,7 +30,9 @@ MacBook Air 15" (macOS for streamlined daily productivity)
 Surface Pro running Arch Linux + Hyprland (Linux productivity & lightweight tasks)
 ### GPU Expansion Roadmap:
 Starter GPU: RTX 3060 Ti to test proof-of-concept AI workloads
+
 Mid-term GPU strategy (3-6 months): RTX 3090 for more intensive ML/AI projects
+
 Long-term strategy: Multi-GPU cluster (2-4x RTX 3090), possibly RTX 4090 or next-gen GPUs like RTX 5090 after validation.
 # 🛠️ Core Software & DevOps Stack
 Applications & systems within my Kubernetes ecosystem include but aren't limited to:
