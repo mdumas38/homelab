@@ -1,0 +1,6 @@
+wallpapers:
+  /home/mason/dotfiles: dotfiles_bg.png
+  /home/mason/config: config_bg.png
+  /home/mason/projects/kubernetes: kube_bg.png
+  /home/mason/projects/ansible: ansible_bg.png
+  default: default_bg.png
