@@ -4,7 +4,7 @@
 # yq (to parse YAML config) - we can install this easily with your existing tools.
 # feh, kitty's set-background, or hyprpaper commands, depending on your choice.
 
-CONFIG_PATH="$HOME/homelab/dynamic-wallpaper/config.yaml"
+CONFIG_PATH="$HOME/repos/github.com/masondumas/homelab/local/DinoPaper/config.yaml"
 CURRENT_DIR="${PWD}"
 
 # Function to find matching wallpaper from config
@@ -24,5 +24,8 @@ get_wallpaper() {
 
 WALLPAPER_FILE=$(get_wallpaper "$CURRENT_DIR")
 
+# write dynamically-determined wallpaper directly into background.conf
+echo "background_image /Users/masondumas/Library/CloudStorage/SynologyDrive-Downloads/wallpapers/$WALLPAPER_FILE" >~/.config/kitty/background.conf
+
 # Example: set wallpaper with kitty
-kitty @ set-background-image "/path/to/wallpapers/$WALLPAPER_FILE"
+kitty @ set-background-image "/Users/masondumas/Library/CloudStorage/SynologyDrive-Downloads/wallpapers/$WALLPAPER_FILE"
