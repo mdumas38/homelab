@@ -1,0 +1,7 @@
+helloworld/application/package-info.class
+helloworld/api/HelloWorldEndpoint$MyResponse.class
+helloworld/domain/package-info.class
+META-INF/akka-javasdk-components.conf
+helloworld/api/HelloWorldEndpoint$GreetingRequest.class
+helloworld/api/HelloWorldEndpoint.class
+helloworld/api/package-info.class
