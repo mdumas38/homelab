@@ -34,13 +34,13 @@ spec:
 
           volumeMounts:
             - mountPath: /config
-              name: home-assistant-config
+              name: home-assistant-config-refresh
             - mountPath: /dev/ttyUSB0
               name: zigbee-usb-device
       volumes:
-        - name: home-assistant-config
+        - name: home-assistant-config-refresh
           persistentVolumeClaim:
-            claimName: home-assistant-config
+            claimName: home-assistant-config-refresh
         - name: zigbee-usb-device
           hostPath:
             path: /dev/ttyUSB0
