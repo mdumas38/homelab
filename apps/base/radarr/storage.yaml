@@ -1,0 +1,45 @@
+# Radarr Config PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: radarr-config-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 10Gi  # Configuration usually stays small; adjust as needed
+
+---
+
+# Radarr Movies PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: radarr-movies-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 1Ti  # or consider more, movies can accumulate quickly
+
+---
+
+# ARR Stack Shared Downloads PVC for Sonarr, Radarr, Lidarr, etc.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: arrs-downloads-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 500Gi  # Adjust based on your download volume and management practices
