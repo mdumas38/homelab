@@ -36,7 +36,7 @@ spec:
               mountPath: /data/tvshows
             - name: downloads
               mountPath: /data/downloads
-            - name: backup-data
+            - name: sonarr-data-backup
               mountPath: /data/Backup
       volumes:
         - name: sonarr-config
@@ -48,6 +48,6 @@ spec:
         - name: downloads
           persistentVolumeClaim:
             claimName: arrs-downloads-pvc
-        - name: sonarr-backup-data
+        - name: sonarr-data-backup
           persistentVolumeClaim:
             claimName: sonarr-backup-data-pvc
