@@ -50,4 +50,4 @@ spec:
             claimName: arrs-downloads-pvc
         - name: sonarr-data-backup
           persistentVolumeClaim:
-            claimName: sonarr-backup-data-pvc
+            claimName: sonarr-data-backup-pvc
