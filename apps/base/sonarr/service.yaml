@@ -5,7 +5,7 @@ metadata:
   namespace: arr-stack
 spec:
   ports:
-    - port: 7878
+    - port: 8989
       targetPort: 7878
   selector:
     app: sonarr
