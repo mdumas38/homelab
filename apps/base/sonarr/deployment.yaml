@@ -24,7 +24,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
           ports:
-            - containerPort: 8989
+            - containerPort: 7878
           env:
             - name: PUID
               value: "1000"
