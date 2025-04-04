@@ -1,0 +1,29 @@
+# Prowlarr Config PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prowlarr-config-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 10Gi  # Configuration usually stays small; adjust as needed
+
+---
+
+# Prowlarr Data Backup PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prowlarr-data-backup-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 10Gi  # or consider more, movies can accumulate quickly
