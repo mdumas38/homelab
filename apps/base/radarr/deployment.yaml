@@ -33,7 +33,7 @@ spec:
             - name: radarr-config
               mountPath: /config
             - name: radarr-movies
-              mountPath: /data/movies
+              mountPath: /data/movies/Movies
             - name: downloads
               mountPath: /data/downloads
       volumes:

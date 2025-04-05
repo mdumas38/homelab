@@ -36,7 +36,7 @@ spec:
             - name: sonarr-config
               mountPath: /config
             - name: sonarr-tvshows
-              mountPath: /data/tvshows
+              mountPath: /data/tvshows/TV_Shows
             - name: downloads
               mountPath: /data/downloads
             - name: sonarr-data-backup

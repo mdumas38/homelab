@@ -15,16 +15,15 @@ spec:
         app: plex-server
     spec:
       hostNetwork: false
-
+      nodeSelector:
+        type: worker1  # Keep or customize as per your requirements
       containers:
         - name: plex
           image: plexinc/pms-docker:latest
-
           ports:
             - containerPort: 32400
               name: plex
               protocol: TCP
-
           envFrom:
             - configMapRef:
                 name: plex-configmap
