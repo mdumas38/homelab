@@ -39,11 +39,11 @@ spec:
             - name: qbittorrent-config
               mountPath: /config
             - name: downloads
-              mountPath: /downloads
+              mountPath: /data/downloads
       volumes:
         - name: qbittorrent-config
           persistentVolumeClaim:
             claimName: qbittorrent-config-pvc
         - name: downloads
           persistentVolumeClaim:
-            claimName: qbittorrent-downloads-pvc
+            claimName: arrs-downloads-pvc
