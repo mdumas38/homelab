@@ -13,6 +13,8 @@ spec:
       labels:
         app: qbittorrent
     spec:
+      nodeSelector:
+        type: worker1
       securityContext:
         fsGroup: 1000
       containers:
