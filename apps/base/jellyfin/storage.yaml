@@ -1,0 +1,13 @@
+# Radarr Config PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jellyfin-config-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 10Gi  # Configuration usually stays small; adjust as needed

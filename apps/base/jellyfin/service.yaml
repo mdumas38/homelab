@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jellyfin
+  namespace: arr-stack
+spec:
+  ports:
+    - name: http
+      port: 8096
+      targetPort: 8096
+    - name: https
+      port: 8920
+      targetPort: 8920
+    - name: discovery-udp
+      protocol: UDP
+      port: 7359
+      targetPort: 7359
+    - name: ssdp-udp
+      protocol: UDP
+      port: 1900
+      targetPort: 1900
+  selector:
+    app: jellyfin
+  type: ClusterIP
