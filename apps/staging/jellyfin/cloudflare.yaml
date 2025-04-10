@@ -76,7 +76,7 @@ data:
     no-autoupdate: true
 
     ingress:
-    - hostname: jellyfin.mrmason.org
+    - hostname: movies.mrmason.org
       service: http://jellyfin:8096
 
     # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
