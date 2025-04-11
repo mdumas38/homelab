@@ -26,7 +26,7 @@ spec:
   storageClassName: synology-nfs
   resources:
     requests:
-      storage: 1Ti  # or consider more, movies can accumulate quickly
+      storage: 3Ti  # or consider more, movies can accumulate quickly
 
 ---
 
