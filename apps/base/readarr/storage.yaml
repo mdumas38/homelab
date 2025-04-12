@@ -1,0 +1,29 @@
+# Readarr Config PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: readarr-config-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 10Gi  # Configuration usually stays small; adjust as needed
+
+---
+
+# readarr books PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: readarr-ebooks-pvc
+  namespace: arr-stack
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 1Ti  # or consider more, books can accumulate quickly

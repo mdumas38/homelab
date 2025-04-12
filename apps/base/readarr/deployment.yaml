@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readarr
+  namespace: arr-stack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: readarr
+  template:
+    metadata:
+      labels:
+        app: readarr
+    spec:
+      nodeSelector:
+        type: worker1  # Keep or customize as per your requirements
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: readarr
+          image: lscr.io/linuxserver/readarr:latest
+          ports:
+            - containerPort: 8787
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: "Europe/London"
+          volumeMounts:
+            - name: readarr-config
+              mountPath: /config
+            - name: readarr-ebooks
+              mountPath: /books
+            - name: downloads
+              mountPath: /downloads
+      volumes:
+        - name: readarr-config
+          persistentVolumeClaim:
+            claimName: readarr-config-pvc
+        - name: readarr-ebooks
+          persistentVolumeClaim:
+            claimName: readarr-ebooks-pvc
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: arrs-downloads-pvc
