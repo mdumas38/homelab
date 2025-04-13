@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: readarr
-          image: lscr.io/linuxserver/readarr:latest
+          image: lscr.io/linuxserver/readarr:0.4.15-nightly
           ports:
             - containerPort: 8787
           env:
