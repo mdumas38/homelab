@@ -17,7 +17,7 @@ spec:
         type: worker1  # Keep or customize as per your requirements
       containers:
         - name: kavita
-          image: ghcr.io/kareadita/kavita:0.8.5
+          image: ghcr.io/kareadita/kavita:0.8.6
           ports:
             - containerPort: 5000
           volumeMounts:
