@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kavita
+  namespace: arr-stack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kavita
+  template:
+    metadata:
+      labels:
+        app: kavita
+    spec:
+      nodeSelector:
+        type: worker1  # Keep or customize as per your requirements
+      containers:
+        - name: kavita
+          image: ghcr.io/kareadita/kavita:0.8.5
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: kavita-config
+              mountPath: /kavita/config
+            - name: kavita-books
+              mountPath: /books
+      volumes:
+        - name: kavita-config
+          persistentVolumeClaim:
+            claimName: kavita-config-pvc
+        - name: kavita-books
+          persistentVolumeClaim:
+            claimName: kavita-books-pvc
