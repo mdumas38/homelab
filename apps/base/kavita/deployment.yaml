@@ -31,4 +31,4 @@ spec:
             claimName: kavita-config-pvc
         - name: kavita-books
           persistentVolumeClaim:
-            claimName: kavita-books-pvc
+            claimName: readarr-ebooks-pvc

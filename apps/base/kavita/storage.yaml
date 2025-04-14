@@ -11,17 +11,3 @@ spec:
   resources:
     requests:
       storage: 100Gi  # Configuration usually stays small; adjust as needed
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: kavita-books-pvc
-  namespace: arr-stack
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: synology-nfs
-  resources:
-    requests:
-      storage: 100Gi  # Configuration usually stays small; adjust as needed
-
