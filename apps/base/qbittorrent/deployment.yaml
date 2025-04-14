@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: qbittorrent
-          image: lscr.io/linuxserver/qbittorrent:latest
+          image: lscr.io/linuxserver/qbittorrent:5.0.4
           ports:
             - containerPort: 8080      # Web UI
             - containerPort: 6881      # Torrenting TCP port

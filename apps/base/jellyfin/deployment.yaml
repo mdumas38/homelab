@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: jellyfin
-          image: lscr.io/linuxserver/jellyfin:latest
+          image: lscr.io/linuxserver/jellyfin:10.10.7
           ports:
             - containerPort: 8096
             - containerPort: 8920  # optional https

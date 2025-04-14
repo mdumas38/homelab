@@ -20,7 +20,7 @@ spec:
       #     fsGroup: 1001
       containers:
         - name: jellyseerr
-          image: fallenbagel/jellyseerr:latest
+          image: fallenbagel/jellyseerr:v2.5.1
           # securityContext:
           #   runAsUser: 911
           #   runAsGroup: 1001

@@ -19,7 +19,7 @@ spec:
         type: worker1  # Keep or customize as per your requirements
       containers:
         - name: plex
-          image: plexinc/pms-docker:latest
+          image: plexinc/pms-docker:1.41.6.9685-d301f511a
           ports:
             - containerPort: 32400
               name: plex
