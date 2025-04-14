@@ -4,4 +4,4 @@ namespace: headlamp
 resources:
   - ../../base/headlamp/
   - cloudflare.yaml
-  - cloudflare-secret.yaml
+  - cloudflare-secret-headlamp.yaml
