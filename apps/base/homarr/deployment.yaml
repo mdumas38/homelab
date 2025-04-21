@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homarr
+  namespace: arr-stack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homarr
+  template:
+    metadata:
+      labels:
+        app: homarr
+    spec:
+      nodeSelector:
+        type: worker1  # Keep or customize as per your requirements
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+        - name: homarr
+          image: ghcr.io/homarr-labs/homarr:latest
+          ports:
+            - containerPort: 7575
+          env:
+            - name: SECRET_ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: homarr-secrets
+                  key: SECRET_ENCRYPTION_KEY
+          volumeMounts:
+            - name: appdata
+              mountPath: /appdata
+      volumes:
+        - name: appdata
+          persistentVolumeClaim:
+            claimName: homarr-appdata-pvc
