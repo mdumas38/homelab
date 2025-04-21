@@ -16,5 +16,5 @@ resources:
   - jellyseerr
   - jellyfin
   - readarr
-  - kavita
+  # - kavita
   - homarr
