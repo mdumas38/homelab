@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: radarr
-          image: lscr.io/linuxserver/radarr:5.21.1
+          image: lscr.io/linuxserver/radarr:5.22.4
           ports:
             - containerPort: 7878
           env:
