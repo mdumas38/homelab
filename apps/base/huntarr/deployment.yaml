@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: huntarr
+  namespace: arr-stack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: huntarr
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: huntarr
+    spec:
+      nodeSelector:
+        type: worker1
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: huntarr
+          image: huntarr/huntarr:latest
+          ports:
+            - containerPort: 9705
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: "Europe/London"
+          volumeMounts:
+            - name: huntarr-config
+              mountPath: /config
+      volumes:
+        - name: huntarr-config
+          persistentVolumeClaim:
+            claimName: huntarr-config-pvc
+

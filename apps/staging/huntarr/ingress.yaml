@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: huntarr
+  namespace: arr-stack
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: huntarr.mrmason.org
+      http:
+        paths:
+          - backend:
+              service:
+                name: huntarr
+                port:
+                  number: 9705
+            path: /
+            pathType: Prefix
+

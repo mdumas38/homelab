@@ -1,0 +1,17 @@
+# Huntarr Config PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: huntarr-config-pvc
+  namespace: arr-stack
+  labels:
+    kustomize.toolkit.fluxcd.io/name: apps
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: synology-nfs
+  resources:
+    requests:
+      storage: 10Gi  # Configuration usually stays small; adjust as needed
+
