@@ -1,0 +1,59 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nvidia-gpu-operator
+  namespace: gpu-operator
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: gpu-operator
+      version: v25.3.0
+      sourceRef:
+        kind: HelmRepository
+        name: nvidia
+        namespace: flux-system
+      interval: 15m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+      remediateLastFailure: true
+    cleanupOnFail: true
+  values:
+    # Node Feature Discovery is required for the GPU operator
+    nfd:
+      enabled: true
+    
+    # Main operator configuration
+    operator:
+      defaultRuntime: containerd
+      
+    # Driver configuration
+    driver:
+      enabled: true # Set to true by default, but we'll use node selectors to disable on archpc
+      repository: nvcr.io/nvidia
+      version: ~525 # Use the 525 driver branch
+      nodeSelector:
+        kubernetes.io/hostname: "!archpc" # Exclude archpc node from driver installation
+    
+    # Toolkit configuration for containerd
+    toolkit:
+      enabled: true
+      env:
+      - name: CONTAINERD_CONFIG
+        value: /etc/containerd/config.toml
+      - name: CONTAINERD_SOCKET
+        value: /run/containerd/containerd.sock
+      - name: CONTAINERD_RUNTIME_CLASS
+        value: nvidia
+      - name: CONTAINERD_SET_AS_DEFAULT
+        value: "true"
+    
+    # Enable Container Device Interface (CDI)
+    cdi:
+      enabled: true
+      default: true
+
