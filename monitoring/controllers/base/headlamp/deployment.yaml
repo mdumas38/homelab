@@ -18,7 +18,7 @@ spec:
         'kubernetes.io/os': linux
       containers:
       - name: headlamp
-        image: ghcr.io/headlamp-k8s/headlamp:v0.31.0
+        image: ghcr.io/headlamp-k8s/headlamp:v0.31.1
         args:
           - "-in-cluster"
           - "-plugins-dir=/headlamp/plugins"
