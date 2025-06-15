@@ -72,3 +72,4 @@ I'm building—and openly sharing—this personal, decentralized stack as a rall
 
 # 💬 Get Involved & Share Your Feedback!
 Inspired by this journey or curious about starting yours? Have ideas, questions, or just want to talk tech & philosophy? I'm always excited to connect, collaborate, and talk shop—so feel free to get in touch or start a conversation.
+
