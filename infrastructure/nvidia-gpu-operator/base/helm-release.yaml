@@ -31,11 +31,24 @@ spec:
     operator:
       defaultRuntime: containerd
 
-    # Driver configuration - disable since host has pre-existing driver
+    # Driver configuration - let operator manage drivers completely
     driver:
-      enabled: false
+      enabled: true
       repository: nvcr.io/nvidia
-      version: ~525 # Use the 525 driver branch
+      version: "550.90.07" # Use specific stable version
+      upgradePolicy:
+        autoUpgrade: true
+        maxParallelUpgrades: 1
+        waitForCompletion:
+          timeoutSeconds: 1800
+      manager:
+        env:
+          - name: ENABLE_GPU_POD_EVICTION
+            value: "true"
+          - name: ENABLE_AUTO_DRAIN
+            value: "true"
+          - name: DRAIN_USE_FORCE
+            value: "true"
 
     # Toolkit configuration for containerd
     toolkit:
