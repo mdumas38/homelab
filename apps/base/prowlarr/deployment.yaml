@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: prowlarr
-          image: lscr.io/linuxserver/prowlarr:1.36.3
+          image: lscr.io/linuxserver/prowlarr:1.37.0
           ports:
             - containerPort: 9696
           env:
