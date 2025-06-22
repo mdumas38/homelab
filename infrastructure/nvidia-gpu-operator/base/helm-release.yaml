@@ -31,9 +31,9 @@ spec:
     operator:
       defaultRuntime: containerd
 
-    # Driver configuration
+    # Driver configuration - disable since host has pre-existing driver
     driver:
-      enabled: true # Set to true by default, but we'll use node selectors to disable on archpc
+      enabled: false
       repository: nvcr.io/nvidia
       version: ~525 # Use the 525 driver branch
 
