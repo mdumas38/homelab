@@ -1,7 +1,7 @@
 # Application configuration
 image:
   repository: n8nio/n8n
-  tag: 1.100.0  # Matching the current appVersion
+  tag: 1.100.1  # Matching the current appVersion
 
 main:
   config:
