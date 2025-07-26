@@ -14,7 +14,7 @@ spec:
         app: qbittorrent
     spec:
       nodeSelector:
-        type: worker1
+        type: mason-hp-z440-workstation
       securityContext:
         fsGroup: 1000
       containers:

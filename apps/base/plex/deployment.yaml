@@ -16,7 +16,7 @@ spec:
     spec:
       hostNetwork: false
       nodeSelector:
-        type: worker1  # Keep or customize as per your requirements
+        type: mason-hp-z440-workstation  # Keep or customize as per your requirements
       containers:
         - name: plex
           image: plexinc/pms-docker:1.41.6.9685-d301f511a

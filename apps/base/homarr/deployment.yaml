@@ -14,7 +14,7 @@ spec:
         app: homarr
     spec:
       nodeSelector:
-        type: worker1  # Keep or customize as per your requirements
+        type: mason-hp-z440-workstation  # Keep or customize as per your requirements
       securityContext:
         runAsUser: 1000
         fsGroup: 1000

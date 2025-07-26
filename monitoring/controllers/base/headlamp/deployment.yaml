@@ -14,7 +14,7 @@ spec:
         k8s-app: headlamp
     spec:
       nodeSelector:
-        type: worker1
+        type: mason-hp-z440-workstation
         'kubernetes.io/os': linux
       containers:
       - name: headlamp

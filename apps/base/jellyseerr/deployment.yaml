@@ -15,7 +15,7 @@ spec:
         app: jellyseerr
     spec:
       nodeSelector:
-        type: worker1  # Keep or customize as per your requirements
+        type: mason-hp-z440-workstation  # Keep or customize as per your requirements
       # securityContext:
       #     fsGroup: 1001
       containers:

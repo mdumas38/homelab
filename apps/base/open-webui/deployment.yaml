@@ -14,7 +14,7 @@ spec:
         app: open-webui
     spec:
       nodeSelector:
-        type: worker1
+        type: mason-hp-z440-workstation
     #  securityContext:
     #    fsGroup: 33
     #    runAsUser: 33
