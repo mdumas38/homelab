@@ -20,7 +20,7 @@ spec:
 
       containers:
         - name: calibre
-          image: linuxserver/calibre:8.5.0
+          image: linuxserver/calibre:8.7.0
           ports:
             - containerPort: 8080
 
