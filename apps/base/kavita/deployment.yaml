@@ -17,7 +17,7 @@ spec:
         type: mason-hp-z440-workstation  # Keep or customize as per your requirements
       containers:
         - name: kavita
-          image: ghcr.io/kareadita/kavita:0.8.6
+          image: ghcr.io/kareadita/kavita:0.8.7
           ports:
             - containerPort: 5000
           volumeMounts:
